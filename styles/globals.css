@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+@import './themes/theme1.css';
+@import './themes/theme2.css';
+@import './themes/theme3.css';
+@import './themes/theme4.css';
+@import './themes/theme5.css';
+@import './cursor.css';
+
+@layer base {
+  html {
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari, and Edge */
+  html::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    overflow-x: hidden;
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari, and Edge */
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  html:not([data-theme]) {
+    --color-dark: #0C0C0C;
+    --color-light: #eeeeee;
+    --color-light-80: color-mix(in srgb, var(--color-light) 80%, transparent);
+  }
+
+  /* Custom text selection colors */
+  ::selection {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+  }
+
+  ::-moz-selection {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+  }
+}
+
+@keyframes spin-disc {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinning-disc {
+  animation: spin-disc 8s linear infinite;
+}

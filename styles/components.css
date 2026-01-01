@@ -1,0 +1,34 @@
+/* Component styles */
+.btn-primary {
+  background-color: var(--color-light-80);
+  color: var(--color-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: opacity 0.2s ease-out;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.card {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+.text-accent {
+  color: var(--color-light-80);
+}
+
+.bg-accent {
+  background-color: var(--color-light-80);
+}
+
+.postimg {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  margin: 16px 0px 16px 0px;
+}

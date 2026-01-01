@@ -1,0 +1,154 @@
+/* Custom Cursor Styles - Cross-browser compatibility */
+
+/* Base cursor hiding - only on md screens and larger (768px+) and when not disabled */
+@media (min-width: 768px) {
+  /* Ensure html and body take full viewport and hide cursor */
+  html:not(.cursor-disabled) {
+    cursor: none !important;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  html:not(.cursor-disabled) body {
+    cursor: none !important;
+    width: 100%;
+    /* Remove height constraint to allow body to grow with content */
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Hide cursor on all elements and pseudo-elements */
+  html:not(.cursor-disabled) *, 
+  html:not(.cursor-disabled) *::before, 
+  html:not(.cursor-disabled) *::after {
+    cursor: none !important;
+  }
+  
+  /* Ensure viewport/document itself hides cursor - apply to root */
+  :root:not(.cursor-disabled) {
+    cursor: none !important;
+  }
+
+  /* Force show cursor when disabled */
+  html.cursor-disabled,
+  html.cursor-disabled body {
+    cursor: auto !important;
+  }
+
+  html.cursor-disabled *,
+  html.cursor-disabled *::before,
+  html.cursor-disabled *::after {
+    cursor: auto !important;
+  }
+}
+
+/* Firefox-specific cursor hiding - only on desktop and when not disabled */
+@media (min-width: 768px) {
+  @-moz-document url-prefix() {
+    html:not(.cursor-disabled) {
+      cursor: none !important;
+      width: 100%;
+      min-height: 100vh;
+    }
+    
+    html:not(.cursor-disabled) body {
+      cursor: none !important;
+      width: 100%;
+      /* Remove height constraint to allow body to grow with content */
+      overflow-x: hidden;
+    }
+    
+    html:not(.cursor-disabled) *, 
+    html:not(.cursor-disabled) *::before, 
+    html:not(.cursor-disabled) *::after {
+      cursor: none !important;
+    }
+    
+    /* Force hide on all interactive elements in Firefox */
+    html:not(.cursor-disabled) a, 
+    html:not(.cursor-disabled) button, 
+    html:not(.cursor-disabled) input, 
+    html:not(.cursor-disabled) select, 
+    html:not(.cursor-disabled) textarea, 
+    html:not(.cursor-disabled) [role="button"], 
+    html:not(.cursor-disabled) [tabindex] {
+      cursor: none !important;
+    }
+    
+    /* Firefox sometimes shows cursor on focus/hover */
+    html:not(.cursor-disabled) *:hover, 
+    html:not(.cursor-disabled) *:focus, 
+    html:not(.cursor-disabled) *:active {
+      cursor: none !important;
+    }
+
+    /* Force show cursor in Firefox when disabled */
+    html.cursor-disabled,
+    html.cursor-disabled body,
+    html.cursor-disabled *,
+    html.cursor-disabled *::before,
+    html.cursor-disabled *::after,
+    html.cursor-disabled *:hover,
+    html.cursor-disabled *:focus,
+    html.cursor-disabled *:active {
+      cursor: auto !important;
+    }
+  }
+}
+
+/* Safari/WebKit-specific cursor hiding - only on desktop and when not disabled */
+@media (min-width: 768px) {
+  @supports (-webkit-appearance: none) {
+    html:not(.cursor-disabled) {
+      cursor: none !important;
+      -webkit-cursor: none !important;
+      width: 100%;
+      min-height: 100vh;
+    }
+    
+    html:not(.cursor-disabled) body {
+      cursor: none !important;
+      -webkit-cursor: none !important;
+      width: 100%;
+      min-height: 100vh;
+      /* Remove height constraint to allow body to grow with content */
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    
+    html:not(.cursor-disabled) *, 
+    html:not(.cursor-disabled) *::before, 
+    html:not(.cursor-disabled) *::after {
+      cursor: none !important;
+      -webkit-cursor: none !important;
+    }
+    
+    /* Force hide cursor on interactive elements in Safari */
+    html:not(.cursor-disabled) a, 
+    html:not(.cursor-disabled) button, 
+    html:not(.cursor-disabled) input, 
+    html:not(.cursor-disabled) select, 
+    html:not(.cursor-disabled) textarea, 
+    html:not(.cursor-disabled) [role="button"] {
+      cursor: none !important;
+      -webkit-cursor: none !important;
+    }
+
+    /* Force show cursor in Safari when disabled */
+    html.cursor-disabled,
+    html.cursor-disabled body,
+    html.cursor-disabled *,
+    html.cursor-disabled *::before,
+    html.cursor-disabled *::after,
+    html.cursor-disabled a,
+    html.cursor-disabled button,
+    html.cursor-disabled input,
+    html.cursor-disabled select,
+    html.cursor-disabled textarea,
+    html.cursor-disabled [role="button"] {
+      cursor: auto !important;
+      -webkit-cursor: auto !important;
+    }
+  }
+}
