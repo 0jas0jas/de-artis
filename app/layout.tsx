@@ -123,7 +123,6 @@ export default function RootLayout({
           <main className="flex-auto min-w-0 mt-8 flex flex-col px-4">
             <Navbar />
             {children}
-            <Footer />
             <Analytics />
             <SpeedInsights />
           </main>

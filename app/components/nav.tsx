@@ -8,15 +8,9 @@ const navItems = {
   '/': {
     name: 'home',
   },
-  '/writings': {
-    name: 'writings',
-  },
-  '/projects': {
-    name: 'projects',
-  },
-  '/musix': {
-    name: 'musix',
-  },
+  '/monthlys': {
+    name: 'monthlys',
+  }
 }
 
 export function Navbar() {
