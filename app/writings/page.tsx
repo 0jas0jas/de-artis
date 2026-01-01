@@ -37,6 +37,16 @@ export default function Page() {
       </div>
 
       <div>
+        <Link className="flex flex-col space-y-1 mb-4 border-[var(--color-light-80)]" href="/rss">
+          <div className="w-full flex flex-row space-x-2 items-center">
+            <p className="text-[var(--color-light-80)] w-fit tracking-tighter whitespace-nowrap flex-shrink-0">
+              rss feed
+            </p>
+            <p className="text-[var(--color-dark)] dark:text-[var(--color-light)] tracking-tighter truncate">
+              here's the rss if you wanna do stuff w it :D
+            </p>
+          </div>
+        </Link>
         <BlogPosts />
       </div>
     </section>
