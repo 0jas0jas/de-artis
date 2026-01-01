@@ -37,7 +37,7 @@ export async function generateMetadata({ params }) {
       description,
       type: 'article',
       publishedTime,
-      url: `${baseUrl}/projects/${post.slug}`,
+      url: `${baseUrl}/monthlys/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -86,7 +86,7 @@ export default async function Project({ params }) {
             image: post!.metadata.image
               ? `${baseUrl}${post!.metadata.image}`
               : `/og?title=${encodeURIComponent(post!.metadata.title)}`,
-            url: `${baseUrl}/projects/${post!.slug}`,
+            url: `${baseUrl}/monthlys/${post!.slug}`,
             author: {
               '@type': 'Person',
               name: 'avan',
@@ -101,12 +101,12 @@ export default async function Project({ params }) {
         </h1>
         <div className="flex space-x-2">
           {prevSlug && (
-            <InternalHoverButton href={`/projects/${prevSlug}`}>
+            <InternalHoverButton href={`/monthlys/${prevSlug}`}>
               &lt;
             </InternalHoverButton>
           )}
           {nextSlug && (
-            <InternalHoverButton href={`/projects/${nextSlug}`}>
+            <InternalHoverButton href={`/monthlys/${nextSlug}`}>
               &gt;
             </InternalHoverButton>
           )}

@@ -1,4 +1,4 @@
-import { ProjectPosts } from '../components/project-posts'
+import { MonthlyPosts } from '../components/monthly-posts'
 import { AnimatedHeading } from '../components/animated-heading'
 import Link from 'next/link'
 
@@ -21,17 +21,7 @@ export default function Page() {
         </Link>
       </div>
       <div>
-        <ProjectPosts />
-        <Link className="flex flex-col space-y-1 mb-4 border-[var(--color-light-80)]" href="/archive">
-          <div className="w-full flex flex-row space-x-2 items-center">
-            <p className="text-[var(--color-light-80)] w-fit tracking-tighter whitespace-nowrap flex-shrink-0">
-              ar(t)chives
-            </p>
-            <p className="text-[var(--color-dark)] dark:text-[var(--color-light)] tracking-tighter truncate">
-              archived projects
-            </p>
-          </div>
-        </Link>
+        <MonthlyPosts />
       </div>
     </section>
   )
